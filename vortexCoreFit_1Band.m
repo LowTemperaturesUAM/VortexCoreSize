@@ -33,6 +33,9 @@ function [Ajuste,DatosNormalizados,DatosFit] = vortexCoreFit_1Band(Profile,Campo
     b = 48.889/sqrt(Campo);
     Ajuste = zeros(6,1);
         Ajuste(1) = Campo;
+	
+    RhoFit = (0:0.01:1)';
+    Fit = zeros(length(RhoFit),1);
             
 % Parameters
 % ----------------
