@@ -27,8 +27,8 @@
     LateralSize = 359;  % Size of the image in nm
     NVortices = 7;
     NOfPoints = 20;     % Number of points in the profile
-    MaximumRadius = 80; % Maximum radius around the core center in nm
     AppliedField = 0.1; % Applied magnetic field in T
+    MaximumRadius = 0.5*1.05*48.89/sqrt(AppliedField); % Maximum radius around the core center in nm
     BandRatio = 4.6;    % Weight of each band
 % ------------------------------------------------------------------------
 
@@ -44,7 +44,7 @@ Matrix = load(FileName);
     
 Center = zeros(NVortices,2);
 Ajuste = zeros(8,NVortices);
-
+clear DatosNormalizados Fit;
 
 Fig1 = figure(257);
     Fig1.Color = [1 1 1];
@@ -76,7 +76,7 @@ Fig2 = figure(258);
 for Counter = 1:1:NVortices  
     
 	figure(Fig2);
-        Sub = subplot(2,ceil(NVortices/2),Counter);
+        Sub = subplot(round(sqrt(NVortices)),ceil(NVortices/round(sqrt(NVortices))),Counter);
         Sub.Parent = Fig2;
         hold(Sub,'on');
         
