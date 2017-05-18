@@ -25,10 +25,10 @@
 % ------------------------------------------------------------------------
     FileName = 'ZeroBiasMap.txt';
     LateralSize = 359;  % Size of the image in nm
-    NVortices = 7;
+    NVortices = 7;	% Number of input vortex positions to give from the figure
     NOfPoints = 20;     % Number of points in the profile
-    MaximumRadius = 80; % Maximum radius around the core center in nm
     AppliedField = 0.1; % Applied magnetic field in T
+    MaximumRadius = 0.5*1.05*48.89/sqrt(AppliedField); % Maximum radius around the core center in nm   
 % ------------------------------------------------------------------------
 
 
@@ -43,7 +43,7 @@ Matrix = load(FileName);
     
 Center = zeros(NVortices,2);
 Ajuste = zeros(6,NVortices);
-
+clear DatosNormalizados Fit;
 
 Fig1 = figure(257);
     Fig1.Color = [1 1 1];
