@@ -80,7 +80,7 @@ for Counter = 1:1:NVortices
 
     [X,Y] = radialProfile([LateralSize,LateralSize], Center(Counter,:),  Matrix, NOfPoints, MaximumRadius);
 
-    [Ajuste(:,Counter),DatosNormalizados(:,2*Counter-1:2*Counter),DatosFit(:,2*Counter-1:2*Counter)] = vortexCoreFit_2Band([X,Y],AppliedField,BandRatio);
+    [Ajuste(:,Counter),DatosNormalizados(:,2*Counter-1:2*Counter),DatosFit(:,2*Counter-1:2*Counter)] = vortexCoreFit_2Bands(X,Y,AppliedField,BandRatio);
 
 end
 
